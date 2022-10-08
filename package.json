@@ -1,0 +1,18 @@
+{
+    "name": "nodejs-webdriverio",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@wdio/cli": "7.24.1",
+        "@wdio/local-runner": "7.24.1",
+        "@wdio/mocha-framework": "7.24.1",
+        "@wdio/spec-reporter": "7.24.1",
+        "chai": "^4.3.6",
+        "chai-sorted": "^0.2.0",
+        "chromedriver": "latest",
+        "wdio-chromedriver-service": "7.3.2"
+    },
+    "scripts": {
+        "test": "wdio run config/wdio.conf.js"
+    }
+}
