@@ -1,4 +1,4 @@
-# n00b Guide
+# Newbie Guide
 
 This specific doc is written for those that have never used WebdriverIO or NodeJS before.
 
