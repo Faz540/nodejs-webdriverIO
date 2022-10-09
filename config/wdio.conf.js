@@ -1,3 +1,5 @@
+const actions = require("../utils/actions");
+
 exports.config = {
     baseUrl: "http://automationpractice.com",
     specs: [
@@ -25,7 +27,17 @@ exports.config = {
         ui: "bdd",
         timeout: 60000
     },
+    // WDIO Hooks:
+    onPrepare: async () => {
+        await actions.cleanUpDirectory("screenshots");
+    },
     before: async () => {
         await browser.url("/index.php");
+    },
+    afterTest: async (test, { error, result, duration, passed, retries }) => {
+        // If a test fails or errors, take a screenshot.
+        // Test Failure = Chai assertion failure
+        // Test Error = Trying to interact with an element that doesn't exist etc.
+        if (passed === false) { await actions.takeScreenshotOfFailure(test); }
     },
 }

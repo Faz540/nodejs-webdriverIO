@@ -20,13 +20,13 @@ describe("Search Results", () => {
       const titles = await searchResultsPage.getProductTitles();
       chai.expect(titles).to.be.ascending;
    });
-   it("clicks 'Add To Cart' and adds product to cart", async () => {
+   it("clicks 'Add To Cart' and adds product to cart @critical", async () => {
       await searchResultsPage.hoverProductById(3);
       await searchResultsPage.addToCartById(3);
       await expect(searchResultsPage.modalCart).toBeDisplayed();
       await expect(searchResultsPage.modalCart).toHaveTextContaining("successfully added");
    });
-   it("clicks a product card navigates the user to a PDP", async () => {
+   it("clicks a product card navigates the user to a PDP @critical", async () => {
       await searchResultsPage.hoverProductById(3);
       await searchResultsPage.selectProductById(3);
       await expect(browser).toHaveUrlContaining("controller=product");

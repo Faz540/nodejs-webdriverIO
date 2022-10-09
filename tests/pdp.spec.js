@@ -6,7 +6,7 @@ describe("PDP", () => {
       before(async () => {
          await browser.url("/index.php?id_product=1&controller=product");
       });
-      it("displays the 'Add To Cart' button", async () => {
+      it("displays the 'Add To Cart' button @critical", async () => {
          await expect(await pdp.buttonAddToCart).toBeDisplayed();
       });
       it("displays the 'Quantity' dropdown menu and '-/+' buttons", async () => {
@@ -27,7 +27,7 @@ describe("PDP", () => {
       afterEach(async () => {
          await browser.deleteCookies();
       });
-      it("clicking 'Add To Cart' successfully adds product to cart", async () => {
+      it("clicking 'Add To Cart' successfully adds product to cart @critical", async () => {
          await pdp.addToCart();
          await expect(await cartModal.modal).toBeDisplayed();
          await expect(await cartModal.textProductTitle).toHaveText("Faded Short Sleeve T-shirts");
@@ -38,7 +38,7 @@ describe("PDP", () => {
          await expect(await cartModal.textQuantity).toHaveText("2");
          await expect(await cartModal.textProductInfoQuantity).toHaveText("2");
       });
-      it("setting the 'size' and adding to cart displays the correct 'size'", async () => {
+      it("setting the 'size' and adding to cart displays the correct 'size' @critical", async () => {
          await pdp.selectSize("L");
          await pdp.addToCart();
          await expect(await cartModal.textProductAttributes).toHaveTextContaining("Orange, L")

@@ -7,7 +7,7 @@ describe("Cart Summary", () => {
       await pdp.addToCart();
       await browser.url("/index.php?controller=order");
    });
-   it("displays the expected product in the basket", async () => {
+   it("displays the expected product in the basket @critical", async () => {
       await expect(cartSummaryPage.rowsItems).toBeDisplayed();
       await expect(cartSummaryPage.rowsItems).toBeElementsArrayOfSize(1);
       await expect(cartSummaryPage.rowsItems[0].getTextContaining("Faded Short Sleeve T-shirts"));
@@ -16,7 +16,7 @@ describe("Cart Summary", () => {
       await expect(cartSummaryPage.dataAvailabilities).toBeDisplayed();
       await expect(cartSummaryPage.dataAvailabilities).toHaveText("In stock");
    });
-   it("displays the 'Procceed To Checkout' button", async () => {
+   it("displays the 'Procceed To Checkout' button @critical", async () => {
       await expect(cartSummaryPage.buttonProceed).toBeDisplayed();
    });
 });
