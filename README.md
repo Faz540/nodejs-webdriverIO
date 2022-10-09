@@ -1,5 +1,7 @@
 # nodejs-webdriverIO
 
+If you're new to NodeJS or WebdriverIO, please read the `newbie_guide.md` :)
+
 ## Framework Checklist:
 ```
 [/] Ability to Install Dependencies through Terminal
@@ -12,6 +14,7 @@
 [x] Dockerize the Project
 [x] Outputs an HTML report
 [x] GitHub Action integration
+[?] Create a newcomers guide for people new to NodeJs or WebdriverIO
 ```
 
 ## Install Project Dependencies:
