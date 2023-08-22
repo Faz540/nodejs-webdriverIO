@@ -3,15 +3,14 @@ const actions = require("../utils/actions");
 exports.config = {
     baseUrl: "http://automationpractice.com",
     specs: [
-        "./tests/*.spec.js"
+        "../tests/*.spec.js"
     ],
-    maxInstances: 10,
+    maxInstances: 1,
     capabilities: [{
         browserName: "chrome",
         acceptInsecureCerts: true,
         "goog:chromeOptions": {
             "args": [
-                // "--headless",
                 "--window-size=1920,1080"
             ]
         }
@@ -20,7 +19,8 @@ exports.config = {
     logLevel: "error",
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
-    services: ["chromedriver"],
+    // Purposely left the below array empty, as WDIO handles the driver management
+    services: [],
     framework: "mocha",
     reporters: ["spec"],
     mochaOpts: {
